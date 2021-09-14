@@ -1,5 +1,4 @@
 #/bin/bash 
-
 local_dir="$HOME/.local"
 config_dir="$HOME/.config"
 
@@ -22,6 +21,7 @@ case $yn in
 		cp ./.xprofile $HOME
 		cp ./.common_ext $HOME
 		cp ./.tmux.conf* $HOME
+    cp ./.Xresource* $HOME
     ! grep -sq "common_ext" "$HOME/.zshrc" \
 		   && echo "[[ -f ~/.common_ext ]] && . ~/.common_ext" >> $HOME/.zshrc  \
 		   && echo '::: Info ::: :add "[[ -f ~/.common_ext ]] && . ~/.common_ext" to $HOME/.zshrc'
@@ -48,26 +48,6 @@ case $yn in
   ;;
 esac
 
-read -p "Do you wish to restore alacritty configure?" yn
-case $yn in
-  [Yy]* ) 
-    echo "::: Info ::: Copy .config/alacritty to $HOME/.config" 
-    cp -r ./.config/alacritty $HOME/.config 
-		;;
-  * ) echo "::: No ::: to next"
-  ;;
-esac
-
-read -p "Do you wish to restore kitty configure?" yn
-case $yn in
-  [Yy]* ) 
-    echo "::: Info ::: Copy .config/alacritty to $HOME/.config" 
-    cp -r ./.config/kitty $HOME/.config 
-		;;
-  * ) echo "::: No ::: to next"
-  ;;
-esac
-
 read -p "Do you wish to restore jgmenu configure?" yn
 case $yn in
   [Yy]* ) 
@@ -84,18 +64,6 @@ case $yn in
   [Yy]* ) 
     echo "::: Info ::: Copy .config/dmenu_extended to $HOME/.config" 
     cp -r ./.config/picom $HOME/.config 
-		;;
-  * ) echo "::: No ::: to next"
-  ;;
-esac
-
-
-
-read -p "Do you wish to restore nvim configure?" yn
-case $yn in
-  [Yy]* ) 
-    echo "::: Info ::: Copy .config/nvim to $HOME/.config" 
-    cp -r ./.config/nvim $HOME/.config 
 		;;
   * ) echo "::: No ::: to next"
   ;;
