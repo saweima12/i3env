@@ -1,0 +1,12 @@
+[Unit]
+Description=Powertop tunings
+
+[Service]
+Type=oneshot
+Environment="TERM=dumb"
+RemainAfterExit=true
+ExecStartPre=/bin/sleep 30
+ExecStart=/usr/bin/powertop --auto-tune
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,3 @@
+#/bin/bash
+
+opera %U --args --disable-web-security --user-data-dir="$HOME/.local/share/opera-nocors"

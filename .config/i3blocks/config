@@ -1,0 +1,82 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+command=/home/tassis/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
+align=center
+separator=false
+separator_block_width=20
+markup=pango
+# border_top=0
+# border_right=0
+# border_bottom=3
+# border_left=0
+
+[title]
+command=xtitle -s | cat
+min_width=900
+interval=persist
+
+[dunst]
+markup=pango
+interval=once
+format=json
+separator=true
+
+
+[volume]
+#command=pulseaudio-ctl full-status | awk '{ printf "%i <span color=\"#bd93f9\">%</span>\n", $1 }'
+label=<span color="#bd93f9"> </span> 
+interval=once
+signal=1
+# border=#bd93f9
+
+
+[disk]
+command=df -h /home | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); printf "%i <span color=\"#50fa7b\">GiB</span>\n", $4 }'
+interval=30
+label=<span color="#50fa7b"> </span>
+# border=#50fa7b
+
+# calendar
+[calendar]
+interval=1
+label=<span color="#eff1fa"> </span> 
+color=#eff1fa
+# border=#eff1fa
+DATEFMT=+%H:%M:%S
+# SHORTFMT=+%H:%M:%S
+HEIGHT=130
+WIDTH=220
+
+# Battery indicator
+#
+# The battery instance defaults to 0.
+[battery2]
+markup=pango
+interval=30
+
+

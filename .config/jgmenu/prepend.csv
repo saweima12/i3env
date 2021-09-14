@@ -1,0 +1,3 @@
+# Search box
+@rect,1,43,24,925,40,3,left,top,#111111 90,#000000 0,
+@search,,48,30,454,25,3,left,top,#ffffff 100,#222222 3,Type to search

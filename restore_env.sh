@@ -1,0 +1,103 @@
+#/bin/bash 
+
+local_dir="$HOME/.local"
+config_dir="$HOME/.config"
+
+# :::: Local Extension ::::
+read -p "Do you wish to restore tool scripts?" yn
+case $yn in
+  [Yy]* ) 
+    echo "::: Info ::: Copy .local/* to $HOME/.local" 
+    cp -r ./.local/*       $local_dir
+		;;
+  * ) echo "::: No ::: to next"
+  ;;
+esac
+
+read -p "Do you wish to restore profile?" yn
+case $yn in
+  [Yy]* ) 
+    echo "::: Info ::: Copy profiles to $HOME" 
+    cp ./.profile $HOME
+		cp ./.xprofile $HOME
+		cp ./.common_ext $HOME
+		cp ./.tmux.conf* $HOME
+    ! grep -sq "common_ext" "$HOME/.zshrc" \
+		   && echo "[[ -f ~/.common_ext ]] && . ~/.common_ext" >> $HOME/.zshrc  \
+		   && echo '::: Info ::: :add "[[ -f ~/.common_ext ]] && . ~/.common_ext" to $HOME/.zshrc'
+	  ! grep -sq "common_ext" "$HOME/.bashrc" \
+		   && echo "[[ -f ~/.common_ext ]] && . ~/.common_ext" >> $HOME/.bashrc  \
+		   && echo '::: Info ::: :add "[[ -f ~/.common_ext ]] && . ~/.common_ext" to $HOME/.bashrc'
+		;;
+  * ) echo "::: No ::: to next"
+  ;;
+esac
+
+
+
+# :::: Configure ::::
+
+read -p "Do you wish to restore i3 configure?" yn
+case $yn in
+  [Yy]* ) 
+    echo "::: Info ::: Copy .config/i3 & .config/i3blocks to $HOME/.config" 
+    cp -r ./.config/i3       $config_dir
+		cp -r ./.config/i3blocks $config_dir
+		;;
+  * ) echo "::: No ::: to next"
+  ;;
+esac
+
+read -p "Do you wish to restore alacritty configure?" yn
+case $yn in
+  [Yy]* ) 
+    echo "::: Info ::: Copy .config/alacritty to $HOME/.config" 
+    cp -r ./.config/alacritty $HOME/.config 
+		;;
+  * ) echo "::: No ::: to next"
+  ;;
+esac
+
+read -p "Do you wish to restore kitty configure?" yn
+case $yn in
+  [Yy]* ) 
+    echo "::: Info ::: Copy .config/alacritty to $HOME/.config" 
+    cp -r ./.config/kitty $HOME/.config 
+		;;
+  * ) echo "::: No ::: to next"
+  ;;
+esac
+
+read -p "Do you wish to restore jgmenu configure?" yn
+case $yn in
+  [Yy]* ) 
+    echo "::: Info ::: Copy .config/jgmenu to $HOME/.config" 
+    cp -r ./.config/jgmenu $HOME/.config 
+		;;
+  * ) echo "::: No ::: to next"
+  ;;
+esac
+
+
+read -p "Do you wish to restore picom configure?" yn
+case $yn in
+  [Yy]* ) 
+    echo "::: Info ::: Copy .config/dmenu_extended to $HOME/.config" 
+    cp -r ./.config/picom $HOME/.config 
+		;;
+  * ) echo "::: No ::: to next"
+  ;;
+esac
+
+
+
+read -p "Do you wish to restore nvim configure?" yn
+case $yn in
+  [Yy]* ) 
+    echo "::: Info ::: Copy .config/nvim to $HOME/.config" 
+    cp -r ./.config/nvim $HOME/.config 
+		;;
+  * ) echo "::: No ::: to next"
+  ;;
+esac
+

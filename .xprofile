@@ -1,0 +1,27 @@
+#/bin/bash
+
+# set i3 default terminal
+# export TERMINAL="alacritty"
+export TERMINAL="urxvt"
+
+# add font support
+xset +fp /home/tassis/.fonts
+xset fp rehash
+
+# setting ibus support
+# export GTK_IM_MODULE=ibus
+# export XMODIFIERS="@im=ibus"
+# export QT_IM_MODULE=ibus
+# ibus-daemon -xrd
+#  
+# setting fcitx support
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+export INPUT_METHOD=fcitx
+export SDL_IM_MODULE=fcitx
+fcitx5 -d
+
+
+[[ -f ~/.instance_ext ]] && . ~/.instance_ext
+[[ -f ~/.xprofile_ext ]] && . ~/.xprofile_ext

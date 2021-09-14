@@ -1,0 +1,23 @@
+#/bin/bash
+
+# add applauncher path
+export PATH="$HOME/Applications:$PATH"
+
+# add alias
+alias nv="nvim"
+#alias vim="nvim"
+alias ra="ranger"
+
+# add pyenv initialize
+# add pyenv support
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init - --no-rehash)"
+
+# add nvm support
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
+
+# add custom environment support.
+[ -f "$HOME/.instance_ext" ] && \. "$HOME/.instance_ext"
