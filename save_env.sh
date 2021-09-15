@@ -26,6 +26,7 @@ cp -r "$config_dir/i3blocks" $config_bak_dir \
 cp -r "$config_dir/picom" $config_bak_dir
 cp -r "$config_dir/jgmenu" $config_bak_dir
 cp -r "$config_dir/ranger" $config_bak_dir
+cp -r "$config_dir/dunst" $config_bak_dir
 
 # backup profile & shell_rc extension
 cp $HOME/.xprofile .

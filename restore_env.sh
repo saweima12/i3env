@@ -62,8 +62,19 @@ esac
 read -p "Do you wish to restore picom configure?" yn
 case $yn in
   [Yy]* ) 
-    echo "::: Info ::: Copy .config/dmenu_extended to $HOME/.config" 
+    echo "::: Info ::: Copy .config/picom to $HOME/.config" 
     cp -r ./.config/picom $HOME/.config 
+		;;
+  * ) echo "::: No ::: to next"
+  ;;
+esac
+
+
+read -p "Do you wish to restore dunst configure?" yn
+case $yn in
+  [Yy]* ) 
+    echo "::: Info ::: Copy .config/dunst to $HOME/.config" 
+    cp -r ./.config/dunst $HOME/.config 
 		;;
   * ) echo "::: No ::: to next"
   ;;
