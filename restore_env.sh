@@ -80,3 +80,13 @@ case $yn in
   ;;
 esac
 
+
+read -p "Do you wish to restore autorandr configure?" yn
+case $yn in
+  [Yy]* ) 
+    echo "::: Info ::: Copy .config/autorandr to $HOME/.config" 
+    cp -r ./.config/autorandr $HOME/.config 
+		;;
+  * ) echo "::: No ::: to next"
+  ;;
+esac

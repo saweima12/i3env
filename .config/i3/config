@@ -170,6 +170,8 @@ bindsym --release Print exec maim | xclip -sel c -t image/png
 # add i3-winmotion support.
 bindsym --release $mod+m exec "killall i3-winmotion; i3-winmotion"
 
+# add i3-autorandr support
+bindsym --release $mod+Shift+Control+r exec "autorandr -c"
 
 # =========================
 # Add Windows Specify Setting.
