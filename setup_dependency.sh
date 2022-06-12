@@ -5,6 +5,7 @@ sudo pacman -S \
   rapidjson make gcc xtitle \
   yad feh autotiling maim \
   pamixer yay dmenu jgmenu bmenu \
+  kitty
 
 
 # clone project && build i3-winmoition

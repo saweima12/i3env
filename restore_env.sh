@@ -90,3 +90,14 @@ case $yn in
   * ) echo "::: No ::: to next"
   ;;
 esac
+
+
+read -p "Do you wish to restore kitty configure?" yn
+case $yn in
+  [Yy]* ) 
+    echo "::: Info ::: Copy .config/kitty to $HOME/.config" 
+    cp -r ./.config/kitty $HOME/.config 
+		;;
+  * ) echo "::: No ::: to next"
+  ;;
+esac

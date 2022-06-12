@@ -2,7 +2,7 @@
 
 # set i3 default terminal
 # export TERMINAL="alacritty"
-export TERMINAL="urxvt"
+export TERMINAL="kitty"
 
 # add font support
 xset +fp /home/tassis/.fonts

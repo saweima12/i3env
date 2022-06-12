@@ -28,6 +28,8 @@ cp -r "$config_dir/jgmenu" $config_bak_dir
 cp -r "$config_dir/ranger" $config_bak_dir
 cp -r "$config_dir/dunst" $config_bak_dir
 cp -r "$config_dir/autorandr" $config_bak_dir
+cp -r "$config_dir/kitty" $config_bak_dir
+
 
 # backup profile & shell_rc extension
 cp $HOME/.xprofile .
